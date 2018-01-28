@@ -1,0 +1,22 @@
+<% if obj.errors.any? %>
+  <h4>There are some problem need do be fix</h4>
+  <ul>
+    <% obj.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+<%= form_for obj do |f| %>
+  <%= f.label :title, "Title" %>
+  <%= f.text_field :title %>
+
+  <%= f.label :description, "description" %>
+  <%= f.text_area :description %>
+
+  <%= f.submit %>
+
+<% end %>
+
+<%= link_to "back to index", articles_path %>
