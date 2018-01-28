@@ -40,6 +40,7 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article.delete
+    flash[:notice] = "Delete success"
     redirect_to articles_path
   end
 
